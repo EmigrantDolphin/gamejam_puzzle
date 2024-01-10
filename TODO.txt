@@ -1,0 +1,7 @@
+
+WAITING FOR ASSETS:
+	Replace clock sprite, change clock hands on time change.
+
+
+TODO:
+	Chnage star positions on clock change

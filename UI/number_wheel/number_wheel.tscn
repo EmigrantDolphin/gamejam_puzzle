@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://c13qwgoq1cfuc"]
+
+[ext_resource type="Script" path="res://UI/number_wheel/number_wheel.gd" id="1_b1xso"]
+
+[node name="NumberWheel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b1xso")
+maxValue = 1
+currentValue = 1
+
+[node name="Increase" type="Button" parent="."]
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 31.0
+text = "+"
+
+[node name="Decrease" type="Button" parent="."]
+layout_mode = 0
+offset_top = 58.0
+offset_right = 22.0
+offset_bottom = 89.0
+text = "-"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 32.0
+offset_right = 22.0
+offset_bottom = 58.0
+text = "1"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Increase" to="." method="_on_increase_pressed"]
+[connection signal="pressed" from="Decrease" to="." method="_on_decrease_pressed"]

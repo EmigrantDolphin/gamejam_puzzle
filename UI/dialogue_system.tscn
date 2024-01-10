@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf0ex45jqqmst"]
+
+[ext_resource type="Script" path="res://UI/dialogue_system.gd" id="1_qs80v"]
+
+[node name="DialogueSystem" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qs80v")
+
+[node name="Dialogue" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -189.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="Dialogue"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.196078, 0.196078, 0.196078, 0.635294)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialogue"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = 20.0
+offset_right = -39.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "Test [color=green]Rich[/color] Text"
+tab_size = 0
+
+[connection signal="gui_input" from="Dialogue" to="." method="_on_dialogue_gui_input"]

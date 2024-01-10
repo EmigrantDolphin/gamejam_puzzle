@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8f7rvvixnevp"]
+
+[ext_resource type="PackedScene" uid="uid://b533ruh5o8a4u" path="res://clock/clock.tscn" id="1_bohfc"]
+[ext_resource type="Texture2D" uid="uid://dx5caa5h21o5u" path="res://icon.svg" id="2_bdqja"]
+[ext_resource type="PackedScene" uid="uid://dkffk67dhg8sh" path="res://UI/clock_time_selection.tscn" id="2_qu16k"]
+[ext_resource type="PackedScene" uid="uid://bf0ex45jqqmst" path="res://UI/dialogue_system.tscn" id="3_rbeys"]
+[ext_resource type="PackedScene" uid="uid://mjt55wiaqsf6" path="res://stars.tscn" id="5_bxn68"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jlt1f"]
+blend_mode = 4
+
+[node name="Main" type="Node2D"]
+
+[node name="Clock" parent="." node_paths=PackedStringArray("dialogueNode") instance=ExtResource("1_bohfc")]
+position = Vector2(571, 237)
+scale = Vector2(4.14371, 3.56361)
+dialogueNode = NodePath("../UI/DialogueSystem")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ClockTimeSelection" parent="UI" instance=ExtResource("2_qu16k")]
+visible = false
+
+[node name="DialogueSystem" parent="UI" instance=ExtResource("3_rbeys")]
+visible = false
+
+[node name="Bounds" type="Node2D" parent="."]
+
+[node name="background" type="Sprite2D" parent="Bounds"]
+material = SubResource("CanvasItemMaterial_jlt1f")
+position = Vector2(7, 320)
+scale = Vector2(0.0859373, 4.98438)
+texture = ExtResource("2_bdqja")
+
+[node name="background2" type="Sprite2D" parent="Bounds"]
+material = SubResource("CanvasItemMaterial_jlt1f")
+position = Vector2(574.5, 4.5)
+scale = Vector2(8.92969, 0.0546876)
+texture = ExtResource("2_bdqja")
+
+[node name="background3" type="Sprite2D" parent="Bounds"]
+material = SubResource("CanvasItemMaterial_jlt1f")
+position = Vector2(576, 640.75)
+scale = Vector2(8.95312, 0.0742182)
+texture = ExtResource("2_bdqja")
+
+[node name="background4" type="Sprite2D" parent="Bounds"]
+material = SubResource("CanvasItemMaterial_jlt1f")
+position = Vector2(1145.5, 320)
+scale = Vector2(0.0546874, 4.98438)
+texture = ExtResource("2_bdqja")
+
+[node name="Stars" parent="." instance=ExtResource("5_bxn68")]
+position = Vector2(904, 213)
+
+[connection signal="clockPressed" from="Clock" to="UI/ClockTimeSelection" method="_on_clock_clock_pressed"]
+[connection signal="timeSelected" from="Clock" to="Stars" method="_on_clock_time_selected"]
+[connection signal="timeSelected" from="UI/ClockTimeSelection" to="Clock" method="_on_clock_time_selection_time_selected"]

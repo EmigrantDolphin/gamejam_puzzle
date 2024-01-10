@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://mjt55wiaqsf6"]
+
+[ext_resource type="Script" path="res://stars.gd" id="1_84wky"]
+[ext_resource type="PackedScene" uid="uid://5v12ovrg3gga" path="res://star.tscn" id="1_nm0er"]
+
+[node name="Stars" type="Node2D"]
+position = Vector2(875.53, 213)
+script = ExtResource("1_84wky")
+
+[node name="Star" parent="." instance=ExtResource("1_nm0er")]
+
+[node name="Star7" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(16, -35)
+
+[node name="Star8" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(19, 28)
+
+[node name="Star9" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(59, -15)
+
+[node name="Star2" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-43, -17)
+
+[node name="Star3" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-34, 26)
+
+[node name="Star4" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-92, -29)
+
+[node name="Star5" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-86, 2)
+
+[node name="Star6" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-79, 33)
