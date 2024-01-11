@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgplach1yt862"]
+
+[ext_resource type="PackedScene" uid="uid://xlro25ih3gac" path="res://start_circle/star_mark.tscn" id="1_oi8n6"]
+[ext_resource type="Script" path="res://start_circle/star_circle.gd" id="1_u1epm"]
+[ext_resource type="PackedScene" uid="uid://casyhn3g7jihq" path="res://start_circle/star_circle_line.tscn" id="2_dkpx4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1varb"]
+radius = 73.0069
+
+[node name="StarCircle" type="Node2D"]
+position = Vector2(80, 77)
+script = ExtResource("1_u1epm")
+lineScene = ExtResource("2_dkpx4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_1varb")
+
+[node name="StarMarkA" parent="." instance=ExtResource("1_oi8n6")]
+
+[node name="StarMarkB" parent="." instance=ExtResource("1_oi8n6")]
+position = Vector2(-55, 19)
+
+[node name="StarMarkC" parent="." instance=ExtResource("1_oi8n6")]
+position = Vector2(46, 44)
+
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="clicked" from="StarMarkA" to="." method="_on_star_mark_a_clicked"]
+[connection signal="clicked" from="StarMarkB" to="." method="_on_star_mark_b_clicked"]
+[connection signal="clicked" from="StarMarkC" to="." method="_on_star_mark_c_clicked"]

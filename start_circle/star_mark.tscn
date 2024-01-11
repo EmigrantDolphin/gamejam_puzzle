@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://xlro25ih3gac"]
+
+[ext_resource type="Script" path="res://start_circle/star_mark.gd" id="1_qu2cf"]
+[ext_resource type="Texture2D" uid="uid://dx5caa5h21o5u" path="res://icon.svg" id="1_u4gp7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iq3f0"]
+radius = 6.0
+
+[node name="StarMark" type="Area2D"]
+script = ExtResource("1_qu2cf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_iq3f0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("1_u4gp7")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
