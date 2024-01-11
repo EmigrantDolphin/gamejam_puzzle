@@ -1,19 +1,45 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8f7rvvixnevp"]
+[gd_scene load_steps=13 format=3 uid="uid://c8f7rvvixnevp"]
 
 [ext_resource type="PackedScene" uid="uid://b533ruh5o8a4u" path="res://clock/clock.tscn" id="1_bohfc"]
-[ext_resource type="Texture2D" uid="uid://dx5caa5h21o5u" path="res://icon.svg" id="2_bdqja"]
+[ext_resource type="Script" path="res://main.gd" id="1_fx4wy"]
+[ext_resource type="Texture2D" uid="uid://baeyi62f3knnt" path="res://nsvgs/kiauri langai.svg" id="1_w8bxb"]
 [ext_resource type="PackedScene" uid="uid://dkffk67dhg8sh" path="res://UI/clock_time_selection.tscn" id="2_qu16k"]
 [ext_resource type="PackedScene" uid="uid://bf0ex45jqqmst" path="res://UI/dialogue_system.tscn" id="3_rbeys"]
+[ext_resource type="PackedScene" uid="uid://ds7ph6rr8m8ks" path="res://led_configurator/led_configurator.tscn" id="4_aqmao"]
 [ext_resource type="PackedScene" uid="uid://mjt55wiaqsf6" path="res://stars.tscn" id="5_bxn68"]
 [ext_resource type="PackedScene" uid="uid://cgplach1yt862" path="res://start_circle/star_circle.tscn" id="6_tteeg"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jlt1f"]
-blend_mode = 4
+[ext_resource type="PackedScene" uid="uid://bi1mjei7js0t" path="res://led_switch/led_switch.tscn" id="8_ayda8"]
+[ext_resource type="Texture2D" uid="uid://n1kw2u6lxeu3" path="res://nsvgs/Asset 24.svg" id="10_pqrmf"]
+[ext_resource type="Texture2D" uid="uid://b5tclrtfqhuw7" path="res://nsvgs/Asset 30.svg" id="10_t7ckx"]
+[ext_resource type="PackedScene" uid="uid://dfyj5ne31xq78" path="res://blinds_switch/blinds_switch.tscn" id="11_s7gbe"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_fx4wy")
+
+[node name="room" type="Sprite2D" parent="."]
+scale = Vector2(0.25766, 0.258167)
+texture = ExtResource("1_w8bxb")
+centered = false
+
+[node name="Stars" parent="." instance=ExtResource("5_bxn68")]
+position = Vector2(903, 217)
+
+[node name="room2" type="Sprite2D" parent="."]
+scale = Vector2(0.25766, 0.258167)
+texture = ExtResource("1_w8bxb")
+centered = false
+
+[node name="blinds" type="Sprite2D" parent="."]
+position = Vector2(827, 205)
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("10_t7ckx")
+
+[node name="StarCircle" parent="blinds" instance=ExtResource("6_tteeg")]
+position = Vector2(-222.642, 3.77356)
+scale = Vector2(3.77359, 3.77359)
 
 [node name="Clock" parent="." node_paths=PackedStringArray("dialogueNode") instance=ExtResource("1_bohfc")]
-position = Vector2(571, 237)
+position = Vector2(607, 115)
 scale = Vector2(4.14371, 3.56361)
 dialogueNode = NodePath("../UI/DialogueSystem")
 
@@ -25,38 +51,33 @@ visible = false
 [node name="DialogueSystem" parent="UI" instance=ExtResource("3_rbeys")]
 visible = false
 
-[node name="Bounds" type="Node2D" parent="."]
+[node name="LedConfigurator" parent="UI" instance=ExtResource("4_aqmao")]
+visible = false
 
-[node name="background" type="Sprite2D" parent="Bounds"]
-material = SubResource("CanvasItemMaterial_jlt1f")
-position = Vector2(7, 320)
-scale = Vector2(0.0859373, 4.98438)
-texture = ExtResource("2_bdqja")
+[node name="ColorRect" type="ColorRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.0392157)
 
-[node name="background2" type="Sprite2D" parent="Bounds"]
-material = SubResource("CanvasItemMaterial_jlt1f")
-position = Vector2(574.5, 4.5)
-scale = Vector2(8.92969, 0.0546876)
-texture = ExtResource("2_bdqja")
+[node name="LedSwitch" parent="." node_paths=PackedStringArray("led_configurator", "led_strip", "overlay_rect") instance=ExtResource("8_ayda8")]
+position = Vector2(1002, 294)
+led_configurator = NodePath("../UI/LedConfigurator")
+led_strip = NodePath("../LedStrip")
+overlay_rect = NodePath("../UI/ColorRect")
 
-[node name="background3" type="Sprite2D" parent="Bounds"]
-material = SubResource("CanvasItemMaterial_jlt1f")
-position = Vector2(576, 640.75)
-scale = Vector2(8.95312, 0.0742182)
-texture = ExtResource("2_bdqja")
+[node name="LedStrip" type="Sprite2D" parent="."]
+position = Vector2(702.5, 37)
+scale = Vector2(0.256271, 0.254)
+texture = ExtResource("10_pqrmf")
 
-[node name="background4" type="Sprite2D" parent="Bounds"]
-material = SubResource("CanvasItemMaterial_jlt1f")
-position = Vector2(1145.5, 320)
-scale = Vector2(0.0546874, 4.98438)
-texture = ExtResource("2_bdqja")
-
-[node name="Stars" parent="." instance=ExtResource("5_bxn68")]
-position = Vector2(904, 213)
-
-[node name="StarCircle" parent="." instance=ExtResource("6_tteeg")]
-position = Vector2(889, 318)
+[node name="blindsSwitch" parent="." node_paths=PackedStringArray("blinds") instance=ExtResource("11_s7gbe")]
+blinds = NodePath("../blinds")
 
 [connection signal="clockPressed" from="Clock" to="UI/ClockTimeSelection" method="_on_clock_clock_pressed"]
 [connection signal="timeSelected" from="Clock" to="Stars" method="_on_clock_time_selected"]
 [connection signal="timeSelected" from="UI/ClockTimeSelection" to="Clock" method="_on_clock_time_selection_time_selected"]
+[connection signal="led_colors_submitted" from="UI/LedConfigurator" to="LedSwitch" method="_on_led_configurator_led_colors_submitted"]

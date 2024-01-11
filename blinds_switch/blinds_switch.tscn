@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfyj5ne31xq78"]
+
+[ext_resource type="Texture2D" uid="uid://1u1fj1nbnkfy" path="res://nsvgs/Asset 25.svg" id="1_050qp"]
+[ext_resource type="Script" path="res://blinds_switch/blinds_switch.gd" id="1_bcc3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64nsy"]
+
+[node name="blindsSwitch" type="Area2D"]
+position = Vector2(989, 214)
+script = ExtResource("1_bcc3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_64nsy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("1_050qp")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

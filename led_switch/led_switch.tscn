@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi1mjei7js0t"]
+
+[ext_resource type="Script" path="res://led_switch/led_switch.gd" id="1_0aro0"]
+[ext_resource type="Texture2D" uid="uid://boss88wy1xwda" path="res://nsvgs/Asset 23.svg" id="2_gaoe1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0kkp"]
+size = Vector2(24, 24)
+
+[node name="LedSwitch" type="Area2D"]
+script = ExtResource("1_0aro0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p0kkp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.365, 0.365)
+texture = ExtResource("2_gaoe1")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,6 +1,6 @@
 extends Control
 
-signal onNumberChange
+signal onNumberChange(value: int)
 
 @export var minValue: int = 0
 @export var maxValue: int = 6

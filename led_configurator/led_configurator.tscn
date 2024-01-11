@@ -1,0 +1,114 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds7ph6rr8m8ks"]
+
+[ext_resource type="Script" path="res://led_configurator/led_configurator.gd" id="1_a4qet"]
+[ext_resource type="PackedScene" uid="uid://c0mbvtyhxpp21" path="res://led_configurator/led_color_picker.tscn" id="2_ub8kw"]
+
+[node name="LedConfigurator" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -231.0
+offset_right = 162.0
+offset_bottom = 231.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a4qet")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.223529)
+
+[node name="Submit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -31.5
+offset_top = -66.0
+offset_right = 31.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Submit
+"
+
+[node name="Red" parent="." instance=ExtResource("2_ub8kw")]
+offset_top = 52.0
+offset_bottom = 152.0
+
+[node name="Label" type="Label" parent="Red"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -16.0
+offset_right = -41.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Red:"
+
+[node name="Green" parent="." instance=ExtResource("2_ub8kw")]
+offset_top = 155.0
+offset_bottom = 257.0
+
+[node name="Label" type="Label" parent="Green"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -15.0
+offset_right = -47.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Green:"
+
+[node name="Blue" parent="." instance=ExtResource("2_ub8kw")]
+offset_top = 256.0
+offset_bottom = 360.0
+
+[node name="Label" type="Label" parent="Blue"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -18.0
+offset_right = -35.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Blue:"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 8.0
+offset_right = 261.0
+offset_bottom = 34.0
+text = "Configure LED strip color"
+
+[connection signal="pressed" from="Submit" to="." method="_on_submit_pressed"]
+[connection signal="on_number_change" from="Red" to="." method="_on_red_on_number_change"]
+[connection signal="on_number_change" from="Green" to="." method="_on_green_on_number_change"]
+[connection signal="on_number_change" from="Blue" to="." method="_on_blue_on_number_change"]

@@ -32,3 +32,423 @@ position = Vector2(-86, 2)
 
 [node name="Star6" parent="." instance=ExtResource("1_nm0er")]
 position = Vector2(-79, 33)
+
+[node name="Star10" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-136.53, 33)
+
+[node name="Star11" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-135.53, -8)
+
+[node name="Star12" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-104.53, 74)
+
+[node name="Star13" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-122.53, -69)
+
+[node name="Star14" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-55.5303, -50)
+
+[node name="Star15" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-21.5303, -68)
+
+[node name="Star16" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-21.5303, 58)
+
+[node name="Star17" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-66.5303, 90)
+
+[node name="Star18" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(6.46973, 76)
+
+[node name="Star19" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(46.4697, 87)
+
+[node name="Star20" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(43.4697, 46)
+
+[node name="Star21" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(57.4697, 13)
+
+[node name="Star22" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-153.53, 85)
+
+[node name="Star23" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-170.53, 46)
+
+[node name="Star24" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-156.53, 8)
+
+[node name="Star25" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-224.53, 38)
+
+[node name="Star26" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-196.53, 21)
+
+[node name="Star27" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-205.53, 13)
+
+[node name="Star28" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-181.53, 14)
+
+[node name="Star29" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-177.53, -28)
+
+[node name="Star30" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-189.53, -48)
+
+[node name="Star31" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-213.53, -24)
+
+[node name="Star32" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-218.53, -54)
+
+[node name="Star33" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-244.53, 19)
+
+[node name="Star34" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-254.53, 66)
+
+[node name="Star35" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-289.53, 45)
+
+[node name="Star36" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-283.53, 5)
+
+[node name="Star37" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-261.53, -11)
+
+[node name="Star38" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-272.53, -35)
+
+[node name="Star39" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-244.53, -41)
+
+[node name="Star40" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-240.53, -5)
+
+[node name="Star41" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-209.53, 71)
+
+[node name="Star42" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-196.53, 47)
+
+[node name="Star43" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-299.53, 76)
+
+[node name="Star44" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-331.53, 49)
+
+[node name="Star45" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-328.53, 21)
+
+[node name="Star46" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-310.53, 4)
+
+[node name="Star47" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-344.53, -17)
+
+[node name="Star48" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-313.53, -26)
+
+[node name="Star49" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-336.53, -44)
+
+[node name="Star50" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-307.53, -51)
+
+[node name="Star51" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-349.53, 10)
+
+[node name="Star52" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-364.53, 45)
+
+[node name="Star53" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-375.53, 15)
+
+[node name="Star54" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-357.53, -11)
+
+[node name="Star148" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-377.53, -11)
+
+[node name="Star149" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-333.53, -4)
+
+[node name="Star55" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-369.53, -30)
+
+[node name="Star56" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-389.53, -51)
+
+[node name="Star57" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-396.53, -20)
+
+[node name="Star58" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-404.53, 21)
+
+[node name="Star59" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-386.53, 43)
+
+[node name="Star60" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-409.53, 56)
+
+[node name="Star61" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-396.53, 83)
+
+[node name="Star62" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-384.53, 68)
+
+[node name="Star63" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-363.53, 85)
+
+[node name="Star64" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-340.53, 72)
+
+[node name="Star65" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-89.5303, 42)
+
+[node name="Star66" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-136.53, 59)
+
+[node name="Star67" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-113.53, 24)
+
+[node name="Star68" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-65.5303, 66)
+
+[node name="Star69" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-61.5303, 12)
+
+[node name="Star70" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-25.5303, 0)
+
+[node name="Star71" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-24.5303, 81)
+
+[node name="Star72" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-52.5303, 113)
+
+[node name="Star73" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-101.53, 110)
+
+[node name="Star74" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-129.53, 97)
+
+[node name="Star75" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-430.53, 40)
+
+[node name="Star76" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-438.53, 71)
+
+[node name="Star77" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-444.53, 55)
+
+[node name="Star78" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-423.53, 17)
+
+[node name="Star79" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-443.53, 11)
+
+[node name="Star80" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-430.53, -11)
+
+[node name="Star81" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-415.53, -35)
+
+[node name="Star82" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-430.53, -33)
+
+[node name="Star83" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-449.53, -59)
+
+[node name="Star84" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-457.53, -38)
+
+[node name="Star85" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-501.53, 33)
+
+[node name="Star86" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-475.53, 62)
+
+[node name="Star87" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-454.53, 30)
+
+[node name="Star88" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-473.53, 19)
+
+[node name="Star89" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-449.53, 1)
+
+[node name="Star90" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-469.53, -5)
+
+[node name="Star91" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-477.53, -17)
+
+[node name="Star92" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-491.53, 9)
+
+[node name="Star93" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-489.53, 31)
+
+[node name="Star94" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-491.53, 61)
+
+[node name="Star95" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-504.53, 77)
+
+[node name="Star96" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-517.53, 30)
+
+[node name="Star97" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-505.53, 16)
+
+[node name="Star98" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-508.53, -5)
+
+[node name="Star99" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-494.53, -24)
+
+[node name="Star100" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-482.53, -34)
+
+[node name="Star101" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-493.53, -39)
+
+[node name="Star102" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-513.53, 54)
+
+[node name="Star103" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-544.53, 36)
+
+[node name="Star104" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-551.53, -29)
+
+[node name="Star105" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-548.53, 14)
+
+[node name="Star117" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-539.53, -8)
+
+[node name="Star118" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-541.53, -57)
+
+[node name="Star119" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-553.53, 80)
+
+[node name="Star120" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-572.53, 43)
+
+[node name="Star121" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-576.53, 69)
+
+[node name="Star122" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-559.53, 25)
+
+[node name="Star123" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-569.53, -10)
+
+[node name="Star124" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-566.53, -50)
+
+[node name="Star125" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-551.53, -80)
+
+[node name="Star126" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-580.53, -71)
+
+[node name="Star127" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-594.53, -32)
+
+[node name="Star128" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-591.53, 10)
+
+[node name="Star129" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-594.53, 51)
+
+[node name="Star130" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-605.53, 77)
+
+[node name="Star131" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-614.53, 27)
+
+[node name="Star132" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-599.53, -9)
+
+[node name="Star133" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-605.53, -55)
+
+[node name="Star134" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-608.53, -80)
+
+[node name="Star135" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-622.53, -25)
+
+[node name="Star136" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-622.53, 5)
+
+[node name="Star137" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-628.53, 56)
+
+[node name="Star138" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-640.53, 17)
+
+[node name="Star139" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-632.53, -38)
+
+[node name="Star140" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-659.53, -29)
+
+[node name="Star141" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-661.53, 21)
+
+[node name="Star142" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-653.53, 69)
+
+[node name="Star143" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-661.53, -10)
+
+[node name="Star144" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-662.53, 47)
+
+[node name="Star145" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-657.53, -70)
+
+[node name="Star146" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-658.53, -49)
+
+[node name="Star147" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-658.53, -49)
+
+[node name="Star106" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-546.53, 51)
+
+[node name="Star107" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-514.53, -64)
+
+[node name="Star108" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-479.53, -76)
+
+[node name="Star109" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-364.53, -71)
+
+[node name="Star110" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-289.53, -65)
+
+[node name="Star111" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-243.53, -68)
+
+[node name="Star112" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-159.53, -65)
+
+[node name="Star113" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-202.53, -70)
+
+[node name="Star114" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-325.53, -64)
+
+[node name="Star115" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-414.53, -60)
+
+[node name="Star116" parent="." instance=ExtResource("1_nm0er")]
+position = Vector2(-414.53, -60)

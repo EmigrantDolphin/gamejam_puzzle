@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://5v12ovrg3gga"]
 
-[ext_resource type="Texture2D" uid="uid://dx5caa5h21o5u" path="res://icon.svg" id="1_slgut"]
+[ext_resource type="Texture2D" uid="uid://bwxmfpnmj3wys" path="res://nsvgs/Asset 26.svg" id="1_ubqqv"]
 
 [node name="Star" type="Sprite2D"]
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("1_slgut")
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("1_ubqqv")

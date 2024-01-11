@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0mbvtyhxpp21"]
+
+[ext_resource type="Script" path="res://led_configurator/led_color_picker.gd" id="1_k1a0t"]
+[ext_resource type="PackedScene" uid="uid://c13qwgoq1cfuc" path="res://UI/number_wheel/number_wheel.tscn" id="1_qe771"]
+
+[node name="LedColorPicker" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 324.0
+offset_bottom = 100.0
+script = ExtResource("1_k1a0t")
+
+[node name="FirstNumber" parent="." instance=ExtResource("1_qe771")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -48.0
+offset_right = -27.0
+offset_bottom = -48.0
+maxValue = 9
+currentValue = 9
+
+[node name="SecondNumber" parent="." instance=ExtResource("1_qe771")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -48.0
+offset_right = 1.0
+offset_bottom = -48.0
+maxValue = 9
+currentValue = 9
+
+[connection signal="onNumberChange" from="FirstNumber" to="." method="_on_first_number_on_number_change"]
+[connection signal="onNumberChange" from="SecondNumber" to="." method="_on_second_number_on_number_change"]

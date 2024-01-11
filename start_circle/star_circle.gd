@@ -11,7 +11,8 @@ var starClickOrder = []
 
 func _input(event):
 	if draggedLine and event is InputEventMouse:
-		var pos = (event as InputEventMouse).position - position
+		var pos = (event as InputEventMouse).position
+		print(pos)
 		draggedLine.set_point_position(1, pos)
 
 func _on_area_2d_mouse_exited():
@@ -32,7 +33,7 @@ func on_mark_clicked(markPosition):
 	draggedLine = lineScene.instantiate() as Line2D
 	draggedLine.add_point(markPosition)
 	draggedLine.add_point(markPosition)
-	add_child(draggedLine)
+	get_tree().root.add_child(draggedLine)
 
 
 func _on_star_mark_a_clicked(markPosition):
@@ -49,3 +50,23 @@ func _on_star_mark_c_clicked(markPosition):
 	on_mark_clicked(markPosition)
 	starClickOrder.append('c')
 
+
+
+func _on_star_mark_d_clicked(markPosition):
+	on_mark_clicked(markPosition)
+	starClickOrder.append('d')
+
+
+func _on_star_mark_e_clicked(markPosition):
+	on_mark_clicked(markPosition)
+	starClickOrder.append('e')
+
+
+func _on_star_mark_f_clicked(markPosition):
+	on_mark_clicked(markPosition)
+	starClickOrder.append('f')
+
+
+func _on_star_mark_g_clicked(markPosition):
+	on_mark_clicked(markPosition)
+	starClickOrder.append('g')
