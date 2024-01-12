@@ -1,14 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://b533ruh5o8a4u"]
 
 [ext_resource type="Script" path="res://clock/clock.gd" id="1_xrh23"]
+[ext_resource type="Texture2D" uid="uid://q71255vbcijo" path="res://nsvgs/Asset 29.svg" id="2_jvlko"]
+[ext_resource type="Texture2D" uid="uid://b1137ns2sw3yg" path="res://nsvgs/Asset 27.svg" id="3_21gb3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_unc33"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kw5k5"]
-load_path = "res://.godot/imported/clock.svg-38fb8f90cf3d2c2112a6dcb7f3cc9ba1.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hs8w0"]
-load_path = "res://.godot/imported/arrow.svg-10085c41bea6469ea8f337149b8a51d7.ctex"
 
 [node name="Clock" type="Area2D"]
 script = ExtResource("1_xrh23")
@@ -16,22 +12,19 @@ script = ExtResource("1_xrh23")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_unc33")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(-2.38419e-07, -2.84217e-14)
-scale = Vector2(0.06, 0.06)
-texture = SubResource("CompressedTexture2D_kw5k5")
-
-[node name="ArrowShort" type="Sprite2D" parent="CollisionShape2D"]
-
 [node name="Sprite2D2" type="Sprite2D" parent="CollisionShape2D"]
-scale = Vector2(0.1, 0.1)
-texture = SubResource("CompressedTexture2D_hs8w0")
-offset = Vector2(0, -40.43)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("2_jvlko")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("3_21gb3")
+offset = Vector2(0, -65.57)
 
 [node name="Sprite2D3" type="Sprite2D" parent="CollisionShape2D"]
-rotation = 0.410152
-scale = Vector2(0.06, 0.075)
-texture = SubResource("CompressedTexture2D_hs8w0")
-offset = Vector2(0, -40.43)
+rotation = 0.602139
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("3_21gb3")
+offset = Vector2(0, -65.57)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

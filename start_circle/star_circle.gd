@@ -100,3 +100,4 @@ func _on_led_switch_led_switch_solved(solved):
 		show()
 	else:
 		hide()
+

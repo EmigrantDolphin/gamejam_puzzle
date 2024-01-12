@@ -35,11 +35,6 @@ visible = false
 position = Vector2(-222.642, 3.77356)
 scale = Vector2(3.77359, 3.77359)
 
-[node name="Clock" parent="." node_paths=PackedStringArray("dialogueNode") instance=ExtResource("1_bohfc")]
-position = Vector2(607, 115)
-scale = Vector2(4.14371, 3.56361)
-dialogueNode = NodePath("../UI/DialogueSystem")
-
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="ClockTimeSelection" parent="UI" instance=ExtResource("2_qu16k")]
@@ -74,13 +69,18 @@ texture = ExtResource("10_pqrmf")
 [node name="blindsSwitch" parent="." node_paths=PackedStringArray("blinds") instance=ExtResource("11_s7gbe")]
 blinds = NodePath("../blinds")
 
+[node name="Clock" parent="." node_paths=PackedStringArray("dialogueNode") instance=ExtResource("1_bohfc")]
+position = Vector2(582, 151)
+scale = Vector2(3.68, 3.68)
+dialogueNode = NodePath("../UI/DialogueSystem")
+
 [connection signal="starCircleSolved" from="blinds/StarCircle" to="." method="_on_star_circle_star_circle_solved"]
+[connection signal="timeSelected" from="UI/ClockTimeSelection" to="Clock" method="_on_clock_time_selection_time_selected"]
+[connection signal="led_colors_submitted" from="UI/LedConfigurator" to="LedSwitch" method="_on_led_configurator_led_colors_submitted"]
+[connection signal="led_switch_solved" from="LedSwitch" to="." method="_on_led_switch_led_switch_solved"]
+[connection signal="led_switch_solved" from="LedSwitch" to="blinds/StarCircle" method="_on_led_switch_led_switch_solved"]
 [connection signal="clockPressed" from="Clock" to="UI/ClockTimeSelection" method="_on_clock_clock_pressed"]
 [connection signal="clockReset" from="Clock" to="UI/ClockTimeSelection" method="_on_clock_clock_reset"]
 [connection signal="clockSolved" from="Clock" to="." method="_on_clock_clock_solved"]
 [connection signal="clockSolved" from="Clock" to="blinds/StarCircle" method="_on_clock_clock_solved"]
 [connection signal="timeSelected" from="Clock" to="Stars" method="_on_clock_time_selected"]
-[connection signal="timeSelected" from="UI/ClockTimeSelection" to="Clock" method="_on_clock_time_selection_time_selected"]
-[connection signal="led_colors_submitted" from="UI/LedConfigurator" to="LedSwitch" method="_on_led_configurator_led_colors_submitted"]
-[connection signal="led_switch_solved" from="LedSwitch" to="." method="_on_led_switch_led_switch_solved"]
-[connection signal="led_switch_solved" from="LedSwitch" to="blinds/StarCircle" method="_on_led_switch_led_switch_solved"]
