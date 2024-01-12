@@ -12,12 +12,12 @@ func _on_submit_pressed():
 
 
 func _on_red_on_number_change(number): # number is 0 - 99. Spaghetti code but oh well
-	red = number * 255 / 99
+	red = number
 
 
 func _on_green_on_number_change(number):
-	green = number * 255 / 99
+	green = number
 
 
 func _on_blue_on_number_change(number):
-	blue = number * 255 / 99
+	blue = number

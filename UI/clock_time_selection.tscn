@@ -33,7 +33,6 @@ offset_left = 92.5
 offset_top = 99.0
 offset_right = -179.5
 offset_bottom = -154.0
-maxValue = 2
 currentValue = 0
 
 [node name="SecondNumber" parent="." instance=ExtResource("1_x6c0v")]

@@ -32,3 +32,10 @@ func _on_submit_pressed():
 
 func _on_clock_clock_pressed():
 	show()
+
+
+func _on_clock_clock_reset():
+	$FirstNumber.reset()
+	$SecondNumber.reset()
+	$ThirdNumber.reset()
+	$FourthNumber.reset()

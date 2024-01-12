@@ -6,8 +6,16 @@ signal onNumberChange(value: int)
 @export var maxValue: int = 6
 @export var currentValue: int = 0
 
+var initialValue = 0;
+
+func reset():
+	currentValue = initialValue
+	$Label.text = str(currentValue)
+	onNumberChange.emit(currentValue)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	initialValue = currentValue
 	$Label.text = str(currentValue)
 	onNumberChange.emit(currentValue)
 

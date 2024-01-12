@@ -11,7 +11,7 @@ var initialPositionX
 func _ready():
 	initialPositionX = position.x
 
-func _on_clock_time_selected(minutes, areStarsAlligned):
+func _on_clock_time_selected(minutes):
 	var displacement = (minutes * maxDisplacement / maxMintues)
 
 	position.x = initialPositionX + displacement

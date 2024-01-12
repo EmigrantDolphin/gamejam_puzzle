@@ -37,6 +37,82 @@ position = Vector2(24, 9)
 [node name="StarMarkG" parent="." instance=ExtResource("1_oi8n6")]
 position = Vector2(-12, -19)
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 126.0
+offset_right = 166.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -7.0
+offset_right = 36.83
+offset_bottom = 19.0
+scale = Vector2(0.585, 0.585)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "A"
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -12.0
+offset_right = 49.83
+offset_bottom = 14.0
+scale = Vector2(0.585, 0.585)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "B"
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 12.0
+offset_right = 43.83
+offset_bottom = 38.0
+scale = Vector2(0.585, 0.585)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "C"
+
+[node name="Label4" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = 17.0
+offset_right = 18.83
+offset_bottom = 43.0
+scale = Vector2(0.585, 0.585)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "D"
+
+[node name="Label5" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -7.0
+offset_right = 17.83
+offset_bottom = 19.0
+scale = Vector2(0.585, 0.585)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "E"
+
+[node name="Label6" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 2.0
+offset_right = 60.83
+offset_bottom = 28.0
+scale = Vector2(0.585, 0.585)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "F"
+
+[node name="Label7" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -26.0
+offset_right = 24.83
+scale = Vector2(0.585, 0.585)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "G"
+
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="clicked" from="StarMarkA" to="." method="_on_star_mark_a_clicked"]
