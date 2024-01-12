@@ -13,7 +13,7 @@ var solvedBlue = 61
 var uv_color = Color(123 / 255.0, 109 / 255.0, 141 / 255.0)
 
 func _on_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
 		led_configurator.show()
 
 

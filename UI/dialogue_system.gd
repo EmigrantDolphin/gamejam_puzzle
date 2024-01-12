@@ -5,6 +5,7 @@ var waitingForInput = false
 var currentText
 
 
+
 ## { text = 'your text', callback ?= func(): return print('called after clicking on text')}
 func displayListOfText(listOfText):
 	for text in listOfText:
@@ -20,7 +21,7 @@ func _process(_delta):
 
 
 func _on_dialogue_gui_input(event):
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
 		waitingForInput = false
 		if currentText.has('callback'):
 			currentText.callback.call()

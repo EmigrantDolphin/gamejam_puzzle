@@ -29,7 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-color = Color(0.196078, 0.196078, 0.196078, 0.635294)
+color = Color(0.196078, 0.196078, 0.196078, 0.909804)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Dialogue"]
 layout_mode = 1
@@ -45,6 +45,8 @@ grow_vertical = 2
 mouse_filter = 1
 bbcode_enabled = true
 text = "Test [color=green]Rich[/color] Text"
+scroll_active = false
 tab_size = 0
+shortcut_keys_enabled = false
 
 [connection signal="gui_input" from="Dialogue" to="." method="_on_dialogue_gui_input"]

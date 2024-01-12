@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8f7rvvixnevp"]
+[gd_scene load_steps=30 format=3 uid="uid://c8f7rvvixnevp"]
 
 [ext_resource type="PackedScene" uid="uid://b533ruh5o8a4u" path="res://clock/clock.tscn" id="1_bohfc"]
 [ext_resource type="Script" path="res://main.gd" id="1_fx4wy"]
@@ -9,13 +9,214 @@
 [ext_resource type="PackedScene" uid="uid://mjt55wiaqsf6" path="res://stars.tscn" id="5_bxn68"]
 [ext_resource type="PackedScene" uid="uid://cgplach1yt862" path="res://start_circle/star_circle.tscn" id="6_tteeg"]
 [ext_resource type="PackedScene" uid="uid://bi1mjei7js0t" path="res://led_switch/led_switch.tscn" id="8_ayda8"]
-[ext_resource type="Texture2D" uid="uid://n1kw2u6lxeu3" path="res://nsvgs/Asset 24.svg" id="10_pqrmf"]
+[ext_resource type="Texture2D" uid="uid://b6rulqlxhb2cs" path="res://nsvgs/naujas ledas.svg" id="10_6ij4v"]
 [ext_resource type="Texture2D" uid="uid://b5tclrtfqhuw7" path="res://nsvgs/Asset 30.svg" id="10_t7ckx"]
 [ext_resource type="PackedScene" uid="uid://dfyj5ne31xq78" path="res://blinds_switch/blinds_switch.tscn" id="11_s7gbe"]
+[ext_resource type="PackedScene" uid="uid://b51vpl1ua42lg" path="res://journal/journal.tscn" id="13_bonpx"]
+[ext_resource type="Texture2D" uid="uid://bn8y21n6obsod" path="res://nsvgs/gp2.svg" id="14_r82ik"]
+[ext_resource type="Texture2D" uid="uid://d3w33p3edt4mt" path="res://nsvgs/gp3.svg" id="15_hby30"]
+[ext_resource type="Texture2D" uid="uid://c7u3vcejhigeo" path="res://nsvgs/gp4.svg" id="16_b5ye7"]
+[ext_resource type="PackedScene" uid="uid://cbldlelnu1380" path="res://door_handle/door_handle.tscn" id="17_8uy2j"]
+[ext_resource type="Texture2D" uid="uid://b38m0utmu8a7r" path="res://nsvgs/gp1.svg" id="17_uajyu"]
+
+[sub_resource type="Gradient" id="Gradient_qf40x"]
+offsets = PackedFloat32Array(0, 0.993548)
+colors = PackedColorArray(0, 0, 0, 1, 0.529032, 0.529032, 0.529032, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5r06o"]
+gradient = SubResource("Gradient_qf40x")
+
+[sub_resource type="Animation" id="Animation_sxllv"]
+resource_name = "initial_screen_fade_away"
+length = 2.004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_e8op6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vql7h"]
+_data = {
+"RESET": SubResource("Animation_e8op6"),
+"initial_screen_fade_away": SubResource("Animation_sxllv")
+}
+
+[sub_resource type="Animation" id="Animation_fjvml"]
+resource_name = "end"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_f87pa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xvrfg"]
+_data = {
+"RESET": SubResource("Animation_f87pa"),
+"end": SubResource("Animation_fjvml")
+}
+
+[sub_resource type="Animation" id="Animation_hunxo"]
+resource_name = "end"
+length = 2.0155
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_45qlp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ts2q"]
+_data = {
+"RESET": SubResource("Animation_45qlp"),
+"end": SubResource("Animation_hunxo")
+}
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("dialogueSystem")]
 script = ExtResource("1_fx4wy")
 dialogueSystem = NodePath("UI/DialogueSystem")
+
+[node name="Black" type="Sprite2D" parent="."]
+position = Vector2(826.51, 346.476)
+rotation = 1.52716
+scale = Vector2(6.95407, 5.11795)
+texture = SubResource("GradientTexture2D_5r06o")
 
 [node name="Stars" parent="." instance=ExtResource("5_bxn68")]
 position = Vector2(903, 217)
@@ -26,6 +227,7 @@ texture = ExtResource("3_a6ps6")
 centered = false
 
 [node name="blinds" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(827, 205)
 scale = Vector2(0.265, 0.265)
 texture = ExtResource("10_t7ckx")
@@ -36,6 +238,65 @@ position = Vector2(-222.642, 3.77356)
 scale = Vector2(3.77359, 3.77359)
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InitialBlackScreen" type="ColorRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/InitialBlackScreen"]
+libraries = {
+"": SubResource("AnimationLibrary_vql7h")
+}
+
+[node name="FinalBlackScreen" type="ColorRect" parent="UI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="FinalBlackScreenAnimPlayer" type="AnimationPlayer" parent="UI/FinalBlackScreen"]
+libraries = {
+"": SubResource("AnimationLibrary_xvrfg")
+}
+
+[node name="TheEnd" type="Control" parent="UI"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/TheEnd"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.5
+offset_top = -218.0
+offset_right = 108.5
+offset_bottom = -138.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "The End"
+horizontal_alignment = 1
+
+[node name="EndAnimPlayer" type="AnimationPlayer" parent="UI/TheEnd"]
+libraries = {
+"": SubResource("AnimationLibrary_1ts2q")
+}
 
 [node name="ClockTimeSelection" parent="UI" instance=ExtResource("2_qu16k")]
 visible = false
@@ -56,17 +317,18 @@ mouse_filter = 2
 color = Color(1, 1, 1, 0.0392157)
 
 [node name="LedSwitch" parent="." node_paths=PackedStringArray("led_configurator", "led_strip", "overlay_rect") instance=ExtResource("8_ayda8")]
-position = Vector2(1002, 294)
+position = Vector2(993, 273)
 led_configurator = NodePath("../UI/LedConfigurator")
 led_strip = NodePath("../LedStrip")
 overlay_rect = NodePath("../UI/ColorRect")
 
 [node name="LedStrip" type="Sprite2D" parent="."]
-position = Vector2(702.5, 37)
-scale = Vector2(0.256271, 0.254)
-texture = ExtResource("10_pqrmf")
+position = Vector2(576.5, 41)
+scale = Vector2(0.257494, 0.254)
+texture = ExtResource("10_6ij4v")
 
 [node name="blindsSwitch" parent="." node_paths=PackedStringArray("blinds") instance=ExtResource("11_s7gbe")]
+position = Vector2(993, 214)
 blinds = NodePath("../blinds")
 
 [node name="Clock" parent="." node_paths=PackedStringArray("dialogueNode") instance=ExtResource("1_bohfc")]
@@ -74,7 +336,38 @@ position = Vector2(582, 151)
 scale = Vector2(3.68, 3.68)
 dialogueNode = NodePath("../UI/DialogueSystem")
 
+[node name="Journal" parent="." node_paths=PackedStringArray("dialogue_system") instance=ExtResource("13_bonpx")]
+dialogue_system = NodePath("../UI/DialogueSystem")
+
+[node name="Decorations" type="Node2D" parent="."]
+
+[node name="Flower1" type="Sprite2D" parent="Decorations"]
+position = Vector2(328, 454)
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("14_r82ik")
+
+[node name="Flower2" type="Sprite2D" parent="Decorations"]
+position = Vector2(443, 287)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_hby30")
+
+[node name="Pen" type="Sprite2D" parent="Decorations"]
+position = Vector2(52, 437)
+rotation = 1.66679
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("16_b5ye7")
+
+[node name="Poster" type="Sprite2D" parent="Decorations"]
+position = Vector2(191, 207)
+scale = Vector2(0.285, 0.285)
+texture = ExtResource("17_uajyu")
+
+[node name="DoorHandle" parent="." node_paths=PackedStringArray("dialogue_system") instance=ExtResource("17_8uy2j")]
+position = Vector2(1063, 289)
+dialogue_system = NodePath("../UI/DialogueSystem")
+
 [connection signal="starCircleSolved" from="blinds/StarCircle" to="." method="_on_star_circle_star_circle_solved"]
+[connection signal="animation_finished" from="UI/FinalBlackScreen/FinalBlackScreenAnimPlayer" to="." method="_on_final_black_screen_anim_player_animation_finished"]
 [connection signal="timeSelected" from="UI/ClockTimeSelection" to="Clock" method="_on_clock_time_selection_time_selected"]
 [connection signal="led_colors_submitted" from="UI/LedConfigurator" to="LedSwitch" method="_on_led_configurator_led_colors_submitted"]
 [connection signal="led_switch_solved" from="LedSwitch" to="." method="_on_led_switch_led_switch_solved"]

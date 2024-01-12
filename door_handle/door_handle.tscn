@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbldlelnu1380"]
+
+[ext_resource type="Script" path="res://door_handle/door_handle.gd" id="1_rcbxf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_soduv"]
+
+[node name="DoorHandle" type="Area2D"]
+script = ExtResource("1_rcbxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_soduv")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
