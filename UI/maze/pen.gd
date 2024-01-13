@@ -1,6 +1,7 @@
 extends Area2D
 
 signal end_reached
+signal touched_metal
 
 var isDragging = false
 var won = false
@@ -25,12 +26,9 @@ func _on_mouse_entered():
 
 
 func _on_metal_mouse_entered():
-	if won:
+	if won or !isDragging:
 		return
-	isDragging = false
-	position = initialPosition
-	reset_checkpoints()
-	print('reset')
+	lose()
 
 
 func _input(event):
@@ -41,18 +39,23 @@ func _input(event):
 
 
 func _on_end_mouse_entered():
-	if won:
+	if won or !isDragging:
 		return
-	if isDragging and checkpointOneReached and checkpointTwoReached and checkpointThreeReached:
+
+	if checkpointOneReached and checkpointTwoReached and checkpointThreeReached:
 		end_reached.emit()
 		isDragging = false
 		won = true
 		position = finalPosition
 	else:
-		isDragging = false
-		position = initialPosition
-		reset_checkpoints()
+		lose()
 
+func lose():
+	isDragging = false
+	position = initialPosition
+	reset_checkpoints()
+	touched_metal.emit()
+	print('lost')
 
 func reset_checkpoints():
 	checkpointOneReached = false

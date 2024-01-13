@@ -3,6 +3,7 @@ extends Control
 @export var dialogue_system: Control
 
 var won = false
+var showZap = true
 
 func _on_pen_end_reached():
 	print_won_text()
@@ -28,3 +29,14 @@ func print_won_text():
 			Note: I drew a circle on my blinds with invisible ink, so my parents don't get mad at me. It's visible with LED switch set to red: 32, green: 87, blue: 61. I set it up to use UV light with these values."
 		}
 	])
+
+
+func _on_pen_touched_metal():
+	if !showZap:
+		return
+	dialogue_system.displayListOfText([
+		{
+			text = "Ouch!! Touching the line zapped me!"
+		}
+	])
+	showZap = false
