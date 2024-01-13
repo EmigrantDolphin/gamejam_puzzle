@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c8f7rvvixnevp"]
+[gd_scene load_steps=32 format=3 uid="uid://c8f7rvvixnevp"]
 
 [ext_resource type="PackedScene" uid="uid://b533ruh5o8a4u" path="res://clock/clock.tscn" id="1_bohfc"]
 [ext_resource type="Script" path="res://main.gd" id="1_fx4wy"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://mjt55wiaqsf6" path="res://stars.tscn" id="5_bxn68"]
 [ext_resource type="PackedScene" uid="uid://cgplach1yt862" path="res://start_circle/star_circle.tscn" id="6_tteeg"]
 [ext_resource type="PackedScene" uid="uid://bi1mjei7js0t" path="res://led_switch/led_switch.tscn" id="8_ayda8"]
+[ext_resource type="PackedScene" uid="uid://q715mm0mmjok" path="res://UI/picture_puzzle/picture_puzzle.tscn" id="9_v5vqf"]
 [ext_resource type="Texture2D" uid="uid://b6rulqlxhb2cs" path="res://nsvgs/naujas ledas.svg" id="10_6ij4v"]
 [ext_resource type="Texture2D" uid="uid://b5tclrtfqhuw7" path="res://nsvgs/Asset 30.svg" id="10_t7ckx"]
 [ext_resource type="PackedScene" uid="uid://dfyj5ne31xq78" path="res://blinds_switch/blinds_switch.tscn" id="11_s7gbe"]
@@ -18,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c7u3vcejhigeo" path="res://nsvgs/gp4.svg" id="16_b5ye7"]
 [ext_resource type="PackedScene" uid="uid://cbldlelnu1380" path="res://door_handle/door_handle.tscn" id="17_8uy2j"]
 [ext_resource type="Texture2D" uid="uid://b38m0utmu8a7r" path="res://nsvgs/gp1.svg" id="17_uajyu"]
+[ext_resource type="PackedScene" uid="uid://d4f0q08gxrylt" path="res://picture_puzzle.tscn" id="20_uqsew"]
 
 [sub_resource type="Gradient" id="Gradient_qf40x"]
 offsets = PackedFloat32Array(0, 0.993548)
@@ -25,6 +27,33 @@ colors = PackedColorArray(0, 0, 0, 1, 0.529032, 0.529032, 0.529032, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5r06o"]
 gradient = SubResource("Gradient_qf40x")
+
+[sub_resource type="Animation" id="Animation_e8op6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_sxllv"]
 resource_name = "initial_screen_fade_away"
@@ -54,64 +83,10 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_e8op6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vql7h"]
 _data = {
 "RESET": SubResource("Animation_e8op6"),
 "initial_screen_fade_away": SubResource("Animation_sxllv")
-}
-
-[sub_resource type="Animation" id="Animation_fjvml"]
-resource_name = "end"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_f87pa"]
@@ -141,10 +116,64 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_fjvml"]
+resource_name = "end"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xvrfg"]
 _data = {
 "RESET": SubResource("Animation_f87pa"),
 "end": SubResource("Animation_fjvml")
+}
+
+[sub_resource type="Animation" id="Animation_45qlp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_hunxo"]
@@ -173,33 +202,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_45qlp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ts2q"]
@@ -301,9 +303,6 @@ libraries = {
 [node name="ClockTimeSelection" parent="UI" instance=ExtResource("2_qu16k")]
 visible = false
 
-[node name="DialogueSystem" parent="UI" instance=ExtResource("3_rbeys")]
-visible = false
-
 [node name="LedConfigurator" parent="UI" instance=ExtResource("4_aqmao")]
 visible = false
 
@@ -315,6 +314,13 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 1, 0.0392157)
+
+[node name="PicturePuzzle" parent="UI" node_paths=PackedStringArray("dialogue_system") instance=ExtResource("9_v5vqf")]
+visible = false
+dialogue_system = NodePath("../DialogueSystem")
+
+[node name="DialogueSystem" parent="UI" instance=ExtResource("3_rbeys")]
+visible = false
 
 [node name="LedSwitch" parent="." node_paths=PackedStringArray("led_configurator", "led_strip", "overlay_rect") instance=ExtResource("8_ayda8")]
 position = Vector2(993, 273)
@@ -366,6 +372,8 @@ texture = ExtResource("17_uajyu")
 position = Vector2(1063, 289)
 dialogue_system = NodePath("../UI/DialogueSystem")
 
+[node name="PicturePuzzle" parent="." instance=ExtResource("20_uqsew")]
+
 [connection signal="starCircleSolved" from="blinds/StarCircle" to="." method="_on_star_circle_star_circle_solved"]
 [connection signal="animation_finished" from="UI/FinalBlackScreen/FinalBlackScreenAnimPlayer" to="." method="_on_final_black_screen_anim_player_animation_finished"]
 [connection signal="timeSelected" from="UI/ClockTimeSelection" to="Clock" method="_on_clock_time_selection_time_selected"]
@@ -377,3 +385,4 @@ dialogue_system = NodePath("../UI/DialogueSystem")
 [connection signal="clockSolved" from="Clock" to="." method="_on_clock_clock_solved"]
 [connection signal="clockSolved" from="Clock" to="blinds/StarCircle" method="_on_clock_clock_solved"]
 [connection signal="timeSelected" from="Clock" to="Stars" method="_on_clock_time_selected"]
+[connection signal="picture_puzzle_pressed" from="PicturePuzzle" to="UI/PicturePuzzle" method="_on_picture_puzzle_picture_puzzle_pressed"]

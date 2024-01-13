@@ -36,8 +36,8 @@ func printEndOfNight(minutes):
 	var leftoverMinutes = minutes - (hours * 60)
 
 	var text = "You've been waiting until %02.f:%02.f. It's almost time for your day shift, so you have to go.
-	But it's important to investigate this disappearance of a child, you will have to come back here in the evening.
-	The kid might be starving to death, but oh well, you've been waiting the whole night anyways. Surely he will be fine." % [hours, leftoverMinutes]
+	But it's important to investigate this disappearance of a girl, you will have to come back here in the evening.
+	The kid might be starving to death, but oh well, you've been waiting the whole night anyways. Surely she will be fine." % [hours, leftoverMinutes]
 
 	var textObj = {
 		text = text,

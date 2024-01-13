@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4f0q08gxrylt"]
+
+[ext_resource type="Texture2D" uid="uid://dqy6hgbgbsoiu" path="res://nsvgs/fpb.svg" id="1_geh1j"]
+[ext_resource type="Script" path="res://picture_puzzle.gd" id="1_xiehp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2adwn"]
+size = Vector2(45.0284, 47.0644)
+
+[node name="PicturePuzzle" type="Area2D"]
+position = Vector2(353, 332)
+script = ExtResource("1_xiehp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(12, 4)
+scale = Vector2(0.01, 0.01)
+skew = 1.08909
+texture = ExtResource("1_geh1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9.50574, 4.5)
+skew = 1.10828
+shape = SubResource("RectangleShape2D_2adwn")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

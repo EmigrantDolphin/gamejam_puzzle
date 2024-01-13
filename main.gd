@@ -14,16 +14,16 @@ var isStarCircleSolved = false
 func _ready():
 	dialogueSystem.displayListOfText([
 		{
-			text = "(Mouse click to interact)"
+			text = "(Mouse click to interact) (Solutions stay the same if you restart)"
 		},
 		{
-			text = "You've been tasked with finding a missing person. The person is a 16 year old girl. She's a smart kid with high grades in school. Her parents believe that she is a good kid, no drugs, no late night parties, it seems unlikely that she ran away."
+			text = "You've been tasked with finding a missing person. The person is a 16 year old girl. She's a smart kid with high grades in school. She likes solving puzzles a lot. Her parents believe that she is a good kid, no drugs, no late night parties, it seems unlikely that she ran away."
 		},
 		{
 			text = "Police is combing the area in case she was kidnapped. So far no witnesses and nothing on city cameras. It's as if she just disappeared."
 		},
 		{
-			text = "Your job is to investigate the girls room and look for any clues that would help in understanding what might have happened to her.",
+			text = "Your job is to investigate the girls room and look for any clues that could help undestand what might have happened to her.",
 			callback = func(): $UI/InitialBlackScreen/AnimationPlayer.play('initial_screen_fade_away')
 		}
 	])

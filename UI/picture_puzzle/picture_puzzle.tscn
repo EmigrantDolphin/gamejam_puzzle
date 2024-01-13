@@ -1,0 +1,193 @@
+[gd_scene load_steps=11 format=3 uid="uid://q715mm0mmjok"]
+
+[ext_resource type="Texture2D" uid="uid://bocppsmtwoiv2" path="res://nsvgs/bg.svg" id="1_h5tin"]
+[ext_resource type="Script" path="res://UI/picture_puzzle/picture_puzzle.gd" id="1_ijw6b"]
+[ext_resource type="Texture2D" uid="uid://c35yygcrsat44" path="res://nsvgs/2p.svg" id="3_nk2wg"]
+[ext_resource type="Texture2D" uid="uid://v6cty7251wxy" path="res://nsvgs/3p.svg" id="4_tghex"]
+[ext_resource type="Texture2D" uid="uid://6hafek5x0h7" path="res://nsvgs/4p.svg" id="5_xdgoh"]
+[ext_resource type="Texture2D" uid="uid://c4ml5qnmmo2w6" path="res://nsvgs/5p.svg" id="6_h4dwp"]
+[ext_resource type="Texture2D" uid="uid://c3q4ca54rkb1a" path="res://nsvgs/6p.svg" id="7_fqdf5"]
+[ext_resource type="Texture2D" uid="uid://dkplarxoyqpyf" path="res://nsvgs/7p.svg" id="8_uyls8"]
+[ext_resource type="Texture2D" uid="uid://c0gsuyrn3gvce" path="res://nsvgs/8p.svg" id="9_n3d7p"]
+[ext_resource type="Texture2D" uid="uid://b2ten6el8k72x" path="res://nsvgs/9p.svg" id="10_whaeb"]
+
+[node name="PicturePuzzle" type="Control" node_paths=PackedStringArray("puzzle_items")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ijw6b")
+puzzle_items = [NodePath("Background/0"), NodePath("Background/1"), NodePath("Background/2"), NodePath("Background/3"), NodePath("Background/4"), NodePath("Background/5"), NodePath("Background/6"), NodePath("Background/7"), NodePath("Background/8")]
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -129.0
+offset_right = 131.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.175, 1.175)
+texture = ExtResource("1_h5tin")
+expand_mode = 1
+
+[node name="0" type="Control" parent="Background"]
+anchors_preset = 0
+offset_left = 20.4255
+offset_top = 20.4255
+offset_right = 89.4255
+offset_bottom = 79.4255
+
+[node name="1" type="Control" parent="Background"]
+anchors_preset = 0
+offset_left = 96.9255
+offset_top = 20.9255
+offset_right = 165.926
+offset_bottom = 79.9255
+
+[node name="5" type="TextureRect" parent="Background/1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_fqdf5")
+expand_mode = 1
+
+[node name="2" type="Control" parent="Background"]
+anchors_preset = 0
+offset_left = 173.926
+offset_top = 20.9255
+offset_right = 242.926
+offset_bottom = 79.9255
+
+[node name="8" type="TextureRect" parent="Background/2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_whaeb")
+expand_mode = 1
+
+[node name="3" type="Control" parent="Background"]
+anchors_preset = 0
+offset_left = 20.9255
+offset_top = 88.9255
+offset_right = 89.9255
+offset_bottom = 147.925
+
+[node name="1" type="TextureRect" parent="Background/3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_nk2wg")
+expand_mode = 1
+
+[node name="4" type="Control" parent="Background"]
+anchors_preset = 0
+offset_left = 96.9255
+offset_top = 88.9255
+offset_right = 165.926
+offset_bottom = 147.925
+
+[node name="6" type="TextureRect" parent="Background/4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_uyls8")
+expand_mode = 1
+
+[node name="5" type="Control" parent="Background"]
+anchors_preset = 0
+offset_left = 173.926
+offset_top = 88.9255
+offset_right = 242.926
+offset_bottom = 147.925
+
+[node name="3" type="TextureRect" parent="Background/5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xdgoh")
+expand_mode = 1
+
+[node name="6" type="Control" parent="Background"]
+anchors_preset = 0
+offset_left = 20.9255
+offset_top = 157.926
+offset_right = 89.9255
+offset_bottom = 216.925
+
+[node name="4" type="TextureRect" parent="Background/6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_h4dwp")
+expand_mode = 1
+
+[node name="7" type="Control" parent="Background"]
+anchors_preset = 0
+offset_left = 96.9255
+offset_top = 157.926
+offset_right = 165.926
+offset_bottom = 216.925
+
+[node name="7" type="TextureRect" parent="Background/7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_n3d7p")
+expand_mode = 1
+
+[node name="8" type="Control" parent="Background"]
+anchors_preset = 0
+offset_left = 173.926
+offset_top = 157.926
+offset_right = 242.926
+offset_bottom = 216.925
+
+[node name="2" type="TextureRect" parent="Background/8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_tghex")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 485.0
+offset_right = 625.0
+offset_bottom = 516.0
+text = "Close
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
