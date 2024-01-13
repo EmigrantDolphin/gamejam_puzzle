@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm3jde2vq72f6"]
+
+[ext_resource type="Script" path="res://maze_poster.gd" id="1_1nwq0"]
+[ext_resource type="Texture2D" uid="uid://bks5w3nu15als" path="res://nsvgs/labi.svg" id="1_kt1cu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nllst"]
+radius = 21.095
+
+[node name="MazePoster" type="Area2D"]
+position = Vector2(351, 207)
+script = ExtResource("1_1nwq0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(17, 0)
+scale = Vector2(0.04, 0.105)
+texture = ExtResource("1_kt1cu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17, 0)
+scale = Vector2(1.13, 2.935)
+shape = SubResource("CircleShape2D_nllst")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

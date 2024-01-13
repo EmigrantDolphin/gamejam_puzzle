@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c8f7rvvixnevp"]
+[gd_scene load_steps=35 format=3 uid="uid://c8f7rvvixnevp"]
 
 [ext_resource type="PackedScene" uid="uid://b533ruh5o8a4u" path="res://clock/clock.tscn" id="1_bohfc"]
 [ext_resource type="Script" path="res://main.gd" id="1_fx4wy"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://mjt55wiaqsf6" path="res://stars.tscn" id="5_bxn68"]
 [ext_resource type="PackedScene" uid="uid://cgplach1yt862" path="res://start_circle/star_circle.tscn" id="6_tteeg"]
 [ext_resource type="PackedScene" uid="uid://bi1mjei7js0t" path="res://led_switch/led_switch.tscn" id="8_ayda8"]
+[ext_resource type="PackedScene" uid="uid://4hxlinic428k" path="res://UI/maze/maze.tscn" id="9_peeyn"]
 [ext_resource type="PackedScene" uid="uid://q715mm0mmjok" path="res://UI/picture_puzzle/picture_puzzle.tscn" id="9_v5vqf"]
 [ext_resource type="Texture2D" uid="uid://b6rulqlxhb2cs" path="res://nsvgs/naujas ledas.svg" id="10_6ij4v"]
 [ext_resource type="Texture2D" uid="uid://b5tclrtfqhuw7" path="res://nsvgs/Asset 30.svg" id="10_t7ckx"]
@@ -20,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://cbldlelnu1380" path="res://door_handle/door_handle.tscn" id="17_8uy2j"]
 [ext_resource type="Texture2D" uid="uid://b38m0utmu8a7r" path="res://nsvgs/gp1.svg" id="17_uajyu"]
 [ext_resource type="PackedScene" uid="uid://d4f0q08gxrylt" path="res://picture_puzzle.tscn" id="20_uqsew"]
+[ext_resource type="PackedScene" uid="uid://dm3jde2vq72f6" path="res://maze_poster.tscn" id="22_dhc80"]
+[ext_resource type="Script" path="res://pen_ontable.gd" id="22_oku1m"]
 
 [sub_resource type="Gradient" id="Gradient_qf40x"]
 offsets = PackedFloat32Array(0, 0.993548)
@@ -319,6 +322,10 @@ color = Color(1, 1, 1, 0.0392157)
 visible = false
 dialogue_system = NodePath("../DialogueSystem")
 
+[node name="Maze" parent="UI" node_paths=PackedStringArray("dialogue_system") instance=ExtResource("9_peeyn")]
+visible = false
+dialogue_system = NodePath("../DialogueSystem")
+
 [node name="DialogueSystem" parent="UI" instance=ExtResource("3_rbeys")]
 visible = false
 
@@ -357,12 +364,6 @@ position = Vector2(443, 287)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_hby30")
 
-[node name="Pen" type="Sprite2D" parent="Decorations"]
-position = Vector2(52, 437)
-rotation = 1.66679
-scale = Vector2(0.065, 0.065)
-texture = ExtResource("16_b5ye7")
-
 [node name="Poster" type="Sprite2D" parent="Decorations"]
 position = Vector2(191, 207)
 scale = Vector2(0.285, 0.285)
@@ -373,6 +374,22 @@ position = Vector2(1063, 289)
 dialogue_system = NodePath("../UI/DialogueSystem")
 
 [node name="PicturePuzzle" parent="." instance=ExtResource("20_uqsew")]
+
+[node name="MazePoster" parent="." instance=ExtResource("22_dhc80")]
+
+[node name="Pen" type="Area2D" parent="." node_paths=PackedStringArray("dialogue_system")]
+position = Vector2(54, 436)
+script = ExtResource("22_oku1m")
+dialogue_system = NodePath("../UI/DialogueSystem")
+
+[node name="Pen" type="Sprite2D" parent="Pen"]
+position = Vector2(-2, 1)
+rotation = 1.66679
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("16_b5ye7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pen"]
+polygon = PackedVector2Array(-10, -19, 21, 19, 9, 23, -18, -11, -20, -20)
 
 [connection signal="starCircleSolved" from="blinds/StarCircle" to="." method="_on_star_circle_star_circle_solved"]
 [connection signal="animation_finished" from="UI/FinalBlackScreen/FinalBlackScreenAnimPlayer" to="." method="_on_final_black_screen_anim_player_animation_finished"]
@@ -386,3 +403,5 @@ dialogue_system = NodePath("../UI/DialogueSystem")
 [connection signal="clockSolved" from="Clock" to="blinds/StarCircle" method="_on_clock_clock_solved"]
 [connection signal="timeSelected" from="Clock" to="Stars" method="_on_clock_time_selected"]
 [connection signal="picture_puzzle_pressed" from="PicturePuzzle" to="UI/PicturePuzzle" method="_on_picture_puzzle_picture_puzzle_pressed"]
+[connection signal="maze_poster_clicked" from="MazePoster" to="UI/Maze" method="_on_maze_poster_maze_poster_clicked"]
+[connection signal="input_event" from="Pen" to="Pen" method="_on_input_event"]
