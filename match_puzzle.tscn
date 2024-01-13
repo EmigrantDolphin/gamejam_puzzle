@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsl70fhj8lryv"]
+
+[ext_resource type="Script" path="res://match_puzzle.gd" id="1_cgvjj"]
+[ext_resource type="Texture2D" uid="uid://dxckn2egmj4jp" path="res://nsvgs/match_puzzle/uzverstos.png" id="1_kxs3m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgb73"]
+
+[node name="MatchPuzzle" type="Area2D"]
+position = Vector2(529, 362)
+script = ExtResource("1_cgvjj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.06, 0.06)
+skew = 0.811578
+texture = ExtResource("1_kxs3m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.295, 1.295)
+skew = 0.794125
+shape = SubResource("RectangleShape2D_vgb73")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

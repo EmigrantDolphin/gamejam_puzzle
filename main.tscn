@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c8f7rvvixnevp"]
+[gd_scene load_steps=37 format=3 uid="uid://c8f7rvvixnevp"]
 
 [ext_resource type="PackedScene" uid="uid://b533ruh5o8a4u" path="res://clock/clock.tscn" id="1_bohfc"]
 [ext_resource type="Script" path="res://main.gd" id="1_fx4wy"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bi1mjei7js0t" path="res://led_switch/led_switch.tscn" id="8_ayda8"]
 [ext_resource type="PackedScene" uid="uid://4hxlinic428k" path="res://UI/maze/maze.tscn" id="9_peeyn"]
 [ext_resource type="PackedScene" uid="uid://q715mm0mmjok" path="res://UI/picture_puzzle/picture_puzzle.tscn" id="9_v5vqf"]
+[ext_resource type="PackedScene" uid="uid://bae1babapu513" path="res://UI/match_puzzle/match_puzzle.tscn" id="10_5e4g1"]
 [ext_resource type="Texture2D" uid="uid://b6rulqlxhb2cs" path="res://nsvgs/naujas ledas.svg" id="10_6ij4v"]
 [ext_resource type="Texture2D" uid="uid://b5tclrtfqhuw7" path="res://nsvgs/Asset 30.svg" id="10_t7ckx"]
 [ext_resource type="PackedScene" uid="uid://dfyj5ne31xq78" path="res://blinds_switch/blinds_switch.tscn" id="11_s7gbe"]
@@ -23,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://d4f0q08gxrylt" path="res://picture_puzzle.tscn" id="20_uqsew"]
 [ext_resource type="PackedScene" uid="uid://dm3jde2vq72f6" path="res://maze_poster.tscn" id="22_dhc80"]
 [ext_resource type="Script" path="res://pen_ontable.gd" id="22_oku1m"]
+[ext_resource type="PackedScene" uid="uid://dsl70fhj8lryv" path="res://match_puzzle.tscn" id="25_rww5x"]
 
 [sub_resource type="Gradient" id="Gradient_qf40x"]
 offsets = PackedFloat32Array(0, 0.993548)
@@ -326,6 +328,10 @@ dialogue_system = NodePath("../DialogueSystem")
 visible = false
 dialogue_system = NodePath("../DialogueSystem")
 
+[node name="MatchPuzzle" parent="UI" node_paths=PackedStringArray("dialogue_system") instance=ExtResource("10_5e4g1")]
+visible = false
+dialogue_system = NodePath("../DialogueSystem")
+
 [node name="DialogueSystem" parent="UI" instance=ExtResource("3_rbeys")]
 visible = false
 
@@ -391,6 +397,8 @@ texture = ExtResource("16_b5ye7")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pen"]
 polygon = PackedVector2Array(-10, -19, 21, 19, 9, 23, -18, -11, -20, -20)
 
+[node name="MatchPuzzle" parent="." instance=ExtResource("25_rww5x")]
+
 [connection signal="starCircleSolved" from="blinds/StarCircle" to="." method="_on_star_circle_star_circle_solved"]
 [connection signal="animation_finished" from="UI/FinalBlackScreen/FinalBlackScreenAnimPlayer" to="." method="_on_final_black_screen_anim_player_animation_finished"]
 [connection signal="timeSelected" from="UI/ClockTimeSelection" to="Clock" method="_on_clock_time_selection_time_selected"]
@@ -405,3 +413,4 @@ polygon = PackedVector2Array(-10, -19, 21, 19, 9, 23, -18, -11, -20, -20)
 [connection signal="picture_puzzle_pressed" from="PicturePuzzle" to="UI/PicturePuzzle" method="_on_picture_puzzle_picture_puzzle_pressed"]
 [connection signal="maze_poster_clicked" from="MazePoster" to="UI/Maze" method="_on_maze_poster_maze_poster_clicked"]
 [connection signal="input_event" from="Pen" to="Pen" method="_on_input_event"]
+[connection signal="match_puzzle_pressed" from="MatchPuzzle" to="UI/MatchPuzzle" method="_on_match_puzzle_match_puzzle_pressed"]

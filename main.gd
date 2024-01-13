@@ -75,7 +75,10 @@ func _on_final_black_screen_anim_player_animation_finished(_anim_name):
 			text = "\"Hey!\" you hear someone shout. You turn around and see the girl running towards you with excitement"
 		},
 		{
-			text = "\"I can't believe I'm not the only one here! Do you know how to get back to Earth?\" - the girl asked hopefully, with some desperation in her voice.",
+			text = "\"I can't believe I'm not the only one here! Do you know how to get back to Earth?\" - the girl asked hopefully, with some desperation in her voice."
+		},
+		{
+			text = "You talked to the girl for a while, she introduced you to her alien friends. They don't talk our language, but they are very patient at showing you around. The girl is hopeful that we can come back to Earth and establish a connection between the two planets. The only question that is not being answered is... How do we get back?",
 			callback = func(): $UI/TheEnd/EndAnimPlayer.play('end')
 		}
 	])

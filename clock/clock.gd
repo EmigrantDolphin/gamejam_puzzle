@@ -31,13 +31,10 @@ func _on_clock_time_selection_time_selected(minutes):
 	timeSelected.emit(minutes)
 
 
-func printEndOfNight(minutes):
-	var hours = minutes / 60
-	var leftoverMinutes = minutes - (hours * 60)
-
-	var text = "You've been waiting until %02.f:%02.f. It's almost time for your day shift, so you have to go.
+func printEndOfNight(_minutes):
+	var text = "You've been waiting until 6:00. And then you suddenly realized - it's almost time for your day shift, so you have to go.
 	But it's important to investigate this disappearance of a girl, you will have to come back here in the evening.
-	The kid might be starving to death, but oh well, you've been waiting the whole night anyways. Surely she will be fine." % [hours, leftoverMinutes]
+	The kid might be starving to death, but oh well, you've been waiting the whole night anyways. Surely she will be fine."
 
 	var textObj = {
 		text = text,
