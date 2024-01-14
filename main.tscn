@@ -548,6 +548,23 @@ theme_override_font_sizes/font_size = 56
 text = "The End"
 horizontal_alignment = 1
 
+[node name="Label2" type="Label" parent="UI/TheEnd"]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 336.0
+offset_right = 687.0
+offset_bottom = 362.0
+text = "Made by: Emido and Sneko"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="UI/TheEnd"]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 407.0
+offset_right = 750.0
+offset_bottom = 433.0
+text = "Lithuania"
+
 [node name="EndAnimPlayer" type="AnimationPlayer" parent="UI/TheEnd"]
 libraries = {
 "": SubResource("AnimationLibrary_1ts2q")
