@@ -57,11 +57,13 @@ func print_win_text():
 			text = "I solved the puzzle! A torn piece of paper fell out. It reads..."
 		},
 		{
-			text = "2024-01-16. The same dream again. They welcomed me again with open arms. I felt their urge to connect with me and I wanted to connect with them too. I saw one of them come up to the circle statue/mechanism. He stood in such a way so he could see the constellation I dreamed of before. He raised his hand, did a specific motion, pointing to each star in a specific order. And then he vanished. I don't know what this means, but I feel like they want me to try it."
+			text = "2024-01-16. The same dream again. They welcomed me again with open arms. I felt their urge to connect with me and I wanted to connect with them too. I saw one of them come up to the circle statue/mechanism. He stood in such a way so he could see the constellation I dreamed of before. He raised his hand, did a specific motion, pointing to each star in a specific order. And then he vanished. I don't know what this means, but I feel like they want me to try it.",
+			isDiary = true
 			
 		},
 		{
-			text = "Note: I added letters on the blinds with my invisible ink to mark the order of the stars he pointed at. The order that alien used was D, E, C, F, B, A, G. I think the stars have to be aligned for it to work. I'll try it this night. What if it works? Will I be the first human to build a connection with aliens? What if I'm not the first one? This is so exciting!"
+			text = "Note: I added letters on the blinds with my invisible ink to mark the order of the stars he pointed at. The order that alien used was D, E, C, F, B, A, G. I think the stars have to be aligned for it to work. I'll try it this night. What if it works? Will I be the first human to build a connection with aliens? What if I'm not the first one? This is so exciting!",
+			isDiary = true
 		}
 	])
 	

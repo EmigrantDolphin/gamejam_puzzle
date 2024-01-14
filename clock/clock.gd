@@ -16,11 +16,17 @@ func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
 		clockPressed.emit()
 
+func _ready():
+	rotateArrows(lastSelectedMinutes)
+
 
 func _on_clock_time_selection_time_selected(minutes):
 	if (minutes < lastSelectedMinutes or minutes > endOfNightMinutes):
 		printEndOfNight(minutes)
+		rotateArrows(6 * 60)
 		return
+
+	rotateArrows(minutes)
 
 	if (minutes == solvedMinues):
 		clockSolved.emit(true)
@@ -29,6 +35,23 @@ func _on_clock_time_selection_time_selected(minutes):
 
 	lastSelectedMinutes = minutes
 	timeSelected.emit(minutes)
+
+func rotateArrows(minutes):
+	var hour = minutes / 60
+	var minute = minutes - (hour * 60)
+
+	var hourTwelve = hour - 12 if hour > 12 else hour
+	
+	print(hourTwelve)
+	print(minute)
+
+	var shortAngle = 360.0 / 12.0 * hourTwelve
+	var longAngle = 360.0 / 60.0 * minute
+
+	print(shortAngle)
+	print(longAngle)
+	$Long.rotation = longAngle * PI / 180
+	$Short.rotation = shortAngle * PI / 180
 
 
 func printEndOfNight(_minutes):
@@ -42,5 +65,6 @@ func printEndOfNight(_minutes):
 			clockReset.emit() 
 			lastSelectedMinutes = 5
 			timeSelected.emit(5)
+			rotateArrows(5)
 	}
 	dialogueNode.displayListOfText([textObj])

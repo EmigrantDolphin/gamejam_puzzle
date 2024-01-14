@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bf0ex45jqqmst"]
+[gd_scene load_steps=4 format=3 uid="uid://bf0ex45jqqmst"]
 
 [ext_resource type="Script" path="res://UI/dialogue_system.gd" id="1_qs80v"]
+[ext_resource type="FontFile" uid="uid://bl7cw7oss61wl" path="res://fonts/static/Caveat-Regular.ttf" id="2_bqs4t"]
+[ext_resource type="FontFile" uid="uid://x3ajmj3bx4f2" path="res://fonts/roboto/Roboto-Regular.ttf" id="3_as436"]
 
 [node name="DialogueSystem" type="Control"]
 layout_mode = 3
@@ -31,7 +33,8 @@ grow_vertical = 2
 mouse_filter = 1
 color = Color(0.196078, 0.196078, 0.196078, 0.909804)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Dialogue"]
+[node name="NormalLabel" type="RichTextLabel" parent="Dialogue"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,8 +46,32 @@ offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("3_as436")
+theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
-text = "Test [color=green]Rich[/color] Text"
+text = "2024-01-12. The dream was very vivid. I was on, what felt like, a different planet. It had air, good temperature and similar gravity to earth. Everything looked alien but also so beautiful. I didn't recognize any plants, but there were many. Animals I've never seen before. And these humanoid looking aliens, they wore clothing and were paying attetion to me. They gestured to me. It felt like they were inviting me to come. To connect.
+Note: I keep thinking about this dream. Usually I forget my dreams after a few minutes. But not this one. That's very unusual. I wonder what it means..."
+scroll_active = false
+tab_size = 0
+shortcut_keys_enabled = false
+
+[node name="DiaryLabel" type="RichTextLabel" parent="Dialogue"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = 20.0
+offset_right = -39.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("2_bqs4t")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "2024-01-12. The dream was very vivid. I was on, what felt like, a different planet. It had air, good temperature and similar gravity to earth. Everything looked alien but also so beautiful. I didn't recognize any plants, but there were many. Animals I've never seen before. And these humanoid looking aliens, they wore clothing and were paying attetion to me. They gestured to me. It felt like they were inviting me to come. To connect.
+Note: I keep thinking about this dream. Usually I forget my dreams after a few minutes. But not this one. That's very unusual. I wonder what it means..."
 scroll_active = false
 tab_size = 0
 shortcut_keys_enabled = false

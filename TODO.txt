@@ -1,7 +1,7 @@
 
-WAITING FOR ASSETS:
-	Replace clock sprite, change clock hands on time change.
+FUN FACT:
+	Appending a letter each _process run will write text with 60 letters per second speed. Cuz Godot by default has 60 runs / sec
 
 
-TODO:
-	Chnage star positions on clock change
+TO LEARN:
+	change font for existing richTextEditor

@@ -16,13 +16,13 @@ shape = SubResource("CircleShape2D_unc33")
 scale = Vector2(0.055, 0.055)
 texture = ExtResource("2_jvlko")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+[node name="Long" type="Sprite2D" parent="."]
 scale = Vector2(0.055, 0.055)
 texture = ExtResource("3_21gb3")
 offset = Vector2(0, -65.57)
 
-[node name="Sprite2D3" type="Sprite2D" parent="CollisionShape2D"]
-rotation = 0.602139
+[node name="Short" type="Sprite2D" parent="."]
+rotation = 0.972148
 scale = Vector2(0.045, 0.045)
 texture = ExtResource("3_21gb3")
 offset = Vector2(0, -65.57)

@@ -73,7 +73,8 @@ func print_clue():
 		},
 		{
 			text = "2024-01-13. I dreamed about the alien planet again. They were inviting me to come. So I went towards them. They showed me around, but what stuck to my memory the most is how they showed me the star constellations. One constellation in particular. It felt like they wanted me to find it.
-			Note: I stayed up late the night after. I was laying in my bed, looking at the stars and I found it. I found the constellation I saw in my dream! It's only visible through my window at 02:47 at night. Is it possible that they are real? And they are trying to build a connection with me?"
+			Note: I stayed up late the night after. I was laying in my bed, looking at the stars and I found it. I found the constellation I saw in my dream! It's only visible through my window at 02:47 at night. Is it possible that they are real? And they are trying to build a connection with me?",
+			isDiary = true
 		}
 	])
 

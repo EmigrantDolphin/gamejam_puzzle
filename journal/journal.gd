@@ -10,7 +10,7 @@ func read_journal():
 	dialogue_system.displayListOfText([
 		{ text = journalIntro },
 		{ text = 'The last written dream says...'},
-		{ text = firstDream },
+		{ text = firstDream, isDiary = true },
 		{ text = tornPages }
 	])
 
