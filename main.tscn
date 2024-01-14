@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c8f7rvvixnevp"]
+[gd_scene load_steps=45 format=3 uid="uid://c8f7rvvixnevp"]
 
 [ext_resource type="PackedScene" uid="uid://b533ruh5o8a4u" path="res://clock/clock.tscn" id="1_bohfc"]
 [ext_resource type="Script" path="res://main.gd" id="1_fx4wy"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://c7u3vcejhigeo" path="res://nsvgs/gp4.svg" id="16_b5ye7"]
 [ext_resource type="PackedScene" uid="uid://cbldlelnu1380" path="res://door_handle/door_handle.tscn" id="17_8uy2j"]
 [ext_resource type="Texture2D" uid="uid://b38m0utmu8a7r" path="res://nsvgs/gp1.svg" id="17_uajyu"]
+[ext_resource type="Script" path="res://decorations.gd" id="18_hdufc"]
 [ext_resource type="PackedScene" uid="uid://d4f0q08gxrylt" path="res://picture_puzzle.tscn" id="20_uqsew"]
 [ext_resource type="PackedScene" uid="uid://dm3jde2vq72f6" path="res://maze_poster.tscn" id="22_dhc80"]
 [ext_resource type="Script" path="res://pen_ontable.gd" id="22_oku1m"]
@@ -423,6 +424,12 @@ _data = {
 "end": SubResource("Animation_hunxo")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6asg"]
+size = Vector2(48, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsk5b"]
+size = Vector2(78, 107.5)
+
 [node name="Main" type="Node2D" node_paths=PackedStringArray("dialogueSystem")]
 script = ExtResource("1_fx4wy")
 dialogueSystem = NodePath("UI/DialogueSystem")
@@ -600,22 +607,41 @@ dialogueNode = NodePath("../UI/DialogueSystem")
 position = Vector2(146, 395)
 dialogue_system = NodePath("../UI/DialogueSystem")
 
-[node name="Decorations" type="Node2D" parent="."]
-
-[node name="Flower1" type="Sprite2D" parent="Decorations"]
-position = Vector2(328, 454)
-scale = Vector2(0.265, 0.265)
-texture = ExtResource("14_r82ik")
+[node name="Decorations" type="Node2D" parent="." node_paths=PackedStringArray("dialogue_system")]
+script = ExtResource("18_hdufc")
+dialogue_system = NodePath("../UI/DialogueSystem")
 
 [node name="Flower2" type="Sprite2D" parent="Decorations"]
 position = Vector2(443, 287)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_hby30")
 
-[node name="Poster" type="Sprite2D" parent="Decorations"]
+[node name="Flower1" type="Area2D" parent="Decorations"]
+
+[node name="Flower1" type="Sprite2D" parent="Decorations/Flower1"]
+position = Vector2(328, 454)
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("14_r82ik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/Flower1"]
+position = Vector2(325, 464.5)
+shape = SubResource("RectangleShape2D_y6asg")
+
+[node name="Chair" type="Area2D" parent="Decorations"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Decorations/Chair"]
+polygon = PackedVector2Array(121, 424, 177, 419, 168, 520, 184, 583, 180, 589, 158, 545, 115, 558, 117, 608, 100, 606, 91, 560, 54, 560, 43, 606, 16, 601, 21, 548, 12, 517, 87, 493)
+
+[node name="Poster" type="Area2D" parent="Decorations"]
+
+[node name="Poster" type="Sprite2D" parent="Decorations/Poster"]
 position = Vector2(191, 207)
 scale = Vector2(0.285, 0.285)
 texture = ExtResource("17_uajyu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/Poster"]
+position = Vector2(190, 208.25)
+shape = SubResource("RectangleShape2D_fsk5b")
 
 [node name="DoorHandle" parent="." node_paths=PackedStringArray("dialogue_system") instance=ExtResource("17_8uy2j")]
 position = Vector2(1063, 289)
@@ -654,6 +680,9 @@ polygon = PackedVector2Array(-10, -19, 21, 19, 9, 23, -18, -11, -20, -20)
 [connection signal="clockSolved" from="Clock" to="." method="_on_clock_clock_solved"]
 [connection signal="clockSolved" from="Clock" to="blinds/StarCircle" method="_on_clock_clock_solved"]
 [connection signal="timeSelected" from="Clock" to="Stars" method="_on_clock_time_selected"]
+[connection signal="input_event" from="Decorations/Flower1" to="Decorations" method="_on_flower_1_input_event"]
+[connection signal="input_event" from="Decorations/Chair" to="Decorations" method="_on_chair_input_event"]
+[connection signal="input_event" from="Decorations/Poster" to="Decorations" method="_on_poster_input_event"]
 [connection signal="picture_puzzle_pressed" from="PicturePuzzle" to="UI/PicturePuzzle" method="_on_picture_puzzle_picture_puzzle_pressed"]
 [connection signal="maze_poster_clicked" from="MazePoster" to="UI/Maze" method="_on_maze_poster_maze_poster_clicked"]
 [connection signal="input_event" from="Pen" to="Pen" method="_on_input_event"]
