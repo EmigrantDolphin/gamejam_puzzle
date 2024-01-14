@@ -56,6 +56,7 @@ tab_size = 0
 shortcut_keys_enabled = false
 
 [node name="DiaryLabel" type="RichTextLabel" parent="Dialogue"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

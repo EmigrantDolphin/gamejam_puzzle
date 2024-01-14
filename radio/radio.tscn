@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://3cnfw63e2q8a"]
+
+[ext_resource type="Script" path="res://radio/radio.gd" id="1_eev61"]
+[ext_resource type="Texture2D" uid="uid://bj8fdkgrqo7f2" path="res://nsvgs/Asset 89.png" id="1_rwcu2"]
+[ext_resource type="AudioStream" uid="uid://cr6pst1cpb8xy" path="res://music/song.mp3" id="3_ss0oh"]
+
+[node name="Radio" type="Area2D"]
+position = Vector2(104, 346)
+scale = Vector2(0.88, 0.88)
+script = ExtResource("1_eev61")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.017, 0.015)
+texture = ExtResource("1_rwcu2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-19.3182, 46.5909, 37.5, 12.5, 36.3636, -28.4091, 17.0454, -30.6818, -37.5, -4.54547, -36.3636, 42.0454)
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ss0oh")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

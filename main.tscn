@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://c8f7rvvixnevp"]
+[gd_scene load_steps=42 format=3 uid="uid://c8f7rvvixnevp"]
 
 [ext_resource type="PackedScene" uid="uid://b533ruh5o8a4u" path="res://clock/clock.tscn" id="1_bohfc"]
 [ext_resource type="Script" path="res://main.gd" id="1_fx4wy"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dm3jde2vq72f6" path="res://maze_poster.tscn" id="22_dhc80"]
 [ext_resource type="Script" path="res://pen_ontable.gd" id="22_oku1m"]
 [ext_resource type="PackedScene" uid="uid://dsl70fhj8lryv" path="res://match_puzzle.tscn" id="25_rww5x"]
+[ext_resource type="PackedScene" uid="uid://3cnfw63e2q8a" path="res://radio/radio.tscn" id="27_5nu2t"]
 
 [sub_resource type="Gradient" id="Gradient_qf40x"]
 offsets = PackedFloat32Array(0, 0.993548)
@@ -596,6 +597,7 @@ scale = Vector2(3.68, 3.68)
 dialogueNode = NodePath("../UI/DialogueSystem")
 
 [node name="Journal" parent="." node_paths=PackedStringArray("dialogue_system") instance=ExtResource("13_bonpx")]
+position = Vector2(146, 395)
 dialogue_system = NodePath("../UI/DialogueSystem")
 
 [node name="Decorations" type="Node2D" parent="."]
@@ -638,6 +640,8 @@ texture = ExtResource("16_b5ye7")
 polygon = PackedVector2Array(-10, -19, 21, 19, 9, 23, -18, -11, -20, -20)
 
 [node name="MatchPuzzle" parent="." instance=ExtResource("25_rww5x")]
+
+[node name="Radio" parent="." instance=ExtResource("27_5nu2t")]
 
 [connection signal="starCircleSolved" from="blinds/StarCircle" to="." method="_on_star_circle_star_circle_solved"]
 [connection signal="animation_finished" from="UI/FinalBlackScreen/FinalBlackScreenAnimPlayer" to="." method="_on_final_black_screen_anim_player_animation_finished"]
