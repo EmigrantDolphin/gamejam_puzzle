@@ -8,6 +8,8 @@ var hiding = false
 var matchesNeeded = 8
 var matchesMade = 0
 
+var alreadyMatchedIndexes = []
+
 var won = false
 
 func _ready():
@@ -16,7 +18,7 @@ func _ready():
 
 func on_picture_click(picture_index: int):
 	return func(event):
-		if (event is InputEventMouseButton and event.pressed and event.button_index == 1 and !hiding and !won):
+		if (event is InputEventMouseButton and event.pressed and event.button_index == 1 and !hiding and !won and !alreadyMatchedIndexes.has(picture_index)) and openPictureIndex != picture_index:
 			handle_picture(picture_index)
 
 func handle_picture(picture_index):
@@ -25,6 +27,8 @@ func handle_picture(picture_index):
 	if openPictureIndex != -1: # if one is already open
 		var openPictureMatchName = picture_items[openPictureIndex].get_child(0).name
 		if openPictureMatchName == matchName: #if names match, keep both open
+			alreadyMatchedIndexes.append(openPictureIndex)
+			alreadyMatchedIndexes.append(picture_index)
 			openPictureIndex = -1
 			picture_items[picture_index].get_child(1).hide() # hide cover
 			matchesMade += 1
