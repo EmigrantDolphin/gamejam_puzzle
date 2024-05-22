@@ -30,10 +30,11 @@ func on_item_click(item_index):
 
 func handle_item_shift(item_index):
 	var item = puzzle_items[item_index]
+	if item.get_child_count() <= 0:
+		return
+		
 	var item_child = item.get_child(0) as TextureRect
 
-	if (!item_child):
-		return
 
 	var empty_neighbor_position = find_empty_neighbor(item_index)
 	if (empty_neighbor_position == -1):
@@ -47,17 +48,16 @@ func handle_item_shift(item_index):
 
 func find_empty_neighbor(item_index):
 	print(item_index)
-	print(neighbors)
 	var my_neighbors = neighbors[item_index]
 	for neighbor in my_neighbors:
-		var neighbor_child = puzzle_items[neighbor].get_child(0)
-		if !neighbor_child:
+		print(neighbor)
+		if puzzle_items[neighbor].get_child_count() <= 0:
 			return neighbor
 	return -1
 
 func try_win():
 	for item in puzzle_items:
-		if (!item.get_child(0)):
+		if (item.get_child_count() <= 0):
 			continue
 		if (item.get_child(0).name != item.name):
 			return

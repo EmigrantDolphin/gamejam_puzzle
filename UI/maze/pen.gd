@@ -18,6 +18,7 @@ func _ready():
 	initialPosition = position
 
 func _on_mouse_entered():
+	print('pen entered')
 	if won:
 		return
 	if position != initialPosition:

@@ -468,10 +468,10 @@ scale = Vector2(0.105, 0.105)
 texture = ExtResource("2_vf3lx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FallingStars"]
+autoplay = "falling_stars"
 libraries = {
 "": SubResource("AnimationLibrary_vjbfb")
 }
-autoplay = "falling_stars"
 
 [node name="Stars" parent="." instance=ExtResource("5_bxn68")]
 position = Vector2(903, 217)
